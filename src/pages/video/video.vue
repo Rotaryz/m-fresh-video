@@ -27,10 +27,9 @@
               <div class="video-box">
                 <video :id="item.type" class="video" :src="item.url"
                        webkit-playsinline
-                       playsinline
                        controls
                        preload
-                       :poster="item.playerOptions.poster"
+                       :poster="item.poster"
                        @play="playVideo(item)"
                 >
                 </video>
@@ -56,6 +55,7 @@
           txt: '业务流程',
           type: 'mall-1',
           url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8e9a56a5285890790842434700/v.f40.mp4',
+          poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8e9a56a5285890790842434700/1561648206_2098156387.100_0.jpg",
           playerOptions: {
             playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
             autoplay: false, // 如果true,浏览器准备好时开始回放。
@@ -84,6 +84,7 @@
           txt: '拓展活动',
           type: 'mall-2',
           url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea192d5285890790842435171/v.f40.mp4',
+          poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea192d5285890790842435171/1561648206_569702460.100_0.jpg",
           playerOptions: {
             playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
             autoplay: false, // 如果true,浏览器准备好时开始回放。
@@ -112,6 +113,7 @@
           txt: '营销活动',
           type: 'mall-3',
           url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea29f25285890790842435554/v.f40.mp4',
+          poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea29f25285890790842435554/1561648206_2086020895.100_0.jpg",
           playerOptions: {
             playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
             autoplay: false, // 如果true,浏览器准备好时开始回放。
@@ -144,6 +146,7 @@
           txt: '业务流程',
           type: 'supply-1',
           url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eaa8eb5285890790842436204/v.f40.mp4',
+          poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eaa8eb5285890790842436204/1561648206_104897135.100_0.jpg",
           playerOptions: {
             playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
             autoplay: false, // 如果true,浏览器准备好时开始回放。
@@ -172,6 +175,7 @@
           txt: '数字化',
           type: 'supply-2',
           url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eabe325285890790842436706/v.f40.mp4',
+          poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eabe325285890790842436706/1561648206_1260020087.100_0.jpg",
           playerOptions: {
             playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
             autoplay: false, // 如果true,浏览器准备好时开始回放。
@@ -200,6 +204,7 @@
           txt: '移动化',
           type: 'supply-3',
           url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b702ac755285890790842397505/v.f40.mp4',
+          poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b702ac755285890790842397505/1561648206_2088012967.100_0.jpg",
           playerOptions: {
             playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
             autoplay: false, // 如果true,浏览器准备好时开始回放。
@@ -232,6 +237,7 @@
           txt: '数据图谱',
           type: 'data-1',
           url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eb4ad15285890790842437722/v.f40.mp4',
+          poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eb4ad15285890790842437722/1561648206_3136762983.100_0.jpg",
           playerOptions: {
             playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
             autoplay: false, // 如果true,浏览器准备好时开始回放。
@@ -260,6 +266,7 @@
           txt: '选品数据',
           type: 'data-2',
           url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebc6f85285890790842438386/v.f40.mp4',
+          poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebc6f85285890790842438386/1561648207_1236589795.100_0.jpg",
           playerOptions: {
             playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
             autoplay: false, // 如果true,浏览器准备好时开始回放。
@@ -288,6 +295,7 @@
           txt: '社群数据',
           type: 'data-3',
           url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebdf735285890790842438903/v.f40.mp4',
+          poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebdf735285890790842438903/1561648206_97281551.100_0.jpg",
           playerOptions: {
             playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
             autoplay: false, // 如果true,浏览器准备好时开始回放。
