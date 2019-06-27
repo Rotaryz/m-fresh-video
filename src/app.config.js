@@ -1,4 +1,4 @@
 module.exports = {
-  title: 'm-fresh-video',
+  title: '赞播优鲜',
   description: 'mobile fresh-video'
 }
