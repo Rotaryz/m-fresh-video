@@ -28,6 +28,7 @@
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "nprogress": "^0.2.0",
+    "better-scroll": "^1.12.4",
     "storage-controller": "^1.0.4",
     "vue": "^2.5.17",
     "vue-meta": "^1.5.6",

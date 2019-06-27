@@ -16,7 +16,6 @@
             </no-more>
           </div>
           <div v-else class="after-trigger">
-            <loading></loading>
           </div>
         </div>
       </slot>
@@ -34,7 +33,6 @@
         </div>
         <div v-else class="after-trigger">
           <div v-if="isPullingDown" class="loading">
-            <loading></loading>
           </div>
           <div v-else>
             <no-more v-if="showNoMore">
@@ -49,26 +47,23 @@
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
-  import Loading from '@components/_loading/_loading'
   import Bubble from '@components/bubble/bubble.vue'
-  import NoMore from '@components/no-more/no-more'
   import {getRect} from '@utils/dom'
+  import NoMore from '@components/no-more/no-more'
 
   const COMPONENT_NAME = 'scroll'
   const DIRECTION_H = 'horizontal'
   const DIRECTION_V = 'vertical'
-
   export default {
     name: COMPONENT_NAME,
     components: {
-      Loading,
       Bubble,
       NoMore
     },
     props: {
       data: {
         type: Array,
-        default: function() {
+        default: function () {
           return []
         }
       },
