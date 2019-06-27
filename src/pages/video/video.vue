@@ -27,6 +27,10 @@
               <div class="video-box">
                 <video :id="item.type" class="video" :src="item.url"
                        webkit-playsinline
+                       playsinline
+                       x5-video-player-type="h5"
+                       x5-video-orientation="h5"
+                       x5-video-player-fullscreen
                        controls
                        preload
                        :poster="item.poster"
