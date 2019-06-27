@@ -26,8 +26,11 @@
               <img class="video-bc" src="./pic-playbox@2x.png" alt="">
               <div class="video-box">
                 <video :id="item.type" class="video" :src="item.url"
+                       webkit-playsinline
+                       playsinline
                        controls
                        preload
+                       x5-video-player-type="h5"
                        @play="playVideo(item)"
                 >
                 </video>
@@ -48,23 +51,23 @@
   const LIST = {
     mall: {
       list: [
-        {txt: '业务流程', type: 'mall-1', url: 'https://ksv-video-publish.cdn.bcebos.com/afedcf8727879d058cbbf31e791c05d7a432e4de.mp4?auth_key=1561644961-0-0-ee43c33e16eeec4dbbf09917b94ed4d7'},
-        {txt: '拓展活动', type: 'mall-2', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/89d893895285890790814290061/HROWPvbfdzkA.mov'},
-        {txt: '营销活动', type: 'mall-3', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/89d9bd775285890790814292478/1GQ5Z5Ps6mEA.mov'},
+        {txt: '业务流程', type: 'mall-1', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8e9a56a5285890790842434700/v.f40.mp4'},
+        {txt: '拓展活动', type: 'mall-2', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea192d5285890790842435171/v.f40.mp4'},
+        {txt: '营销活动', type: 'mall-3', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea29f25285890790842435554/v.f40.mp4'},
       ]
     },
     supply: {
       list: [
-        {txt: '业务流程', type: 'supply-1', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/8bd607cc5285890790814345243/AO140HJTlMgA.mov'},
-        {txt: '数字化', type: 'supply-2', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/8be938a95285890790814357210/9kfHfPSvF1cA.mov'},
-        {txt: '移动化', type: 'supply-3', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/8c09b1515285890790814370952/DRCOAqTEm8EA.mov'},
+        {txt: '业务流程', type: 'supply-1', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eaa8eb5285890790842436204/v.f40.mp4'},
+        {txt: '数字化', type: 'supply-2', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eabe325285890790842436706/v.f40.mp4'},
+        {txt: '移动化', type: 'supply-3', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b702ac755285890790842397505/v.f40.mp4'},
       ]
     },
     data: {
       list: [
-        {txt: '数据图谱', type: 'data-1', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/8c0ac2195285890790814372796/f9anjt5RevoA.mov'},
-        {txt: '选品数据', type: 'data-2', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/8be7a02c5285890790814354504/V7HGaCazZYEA.mov'},
-        {txt: '社群数据', type: 'data-3', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/8e1a28955285890790814437079/A0QEjEov9aEA.mov'},
+        {txt: '数据图谱', type: 'data-1', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eb4ad15285890790842437722/v.f40.mp4'},
+        {txt: '选品数据', type: 'data-2', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebc6f85285890790842438386/v.f40.mp4'},
+        {txt: '社群数据', type: 'data-3', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebdf735285890790842438903/v.f40.mp4'},
       ]
     }
   }
