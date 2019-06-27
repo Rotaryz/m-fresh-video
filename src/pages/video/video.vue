@@ -26,10 +26,8 @@
               <img class="video-bc" src="./pic-playbox@2x.png" alt="">
               <div class="video-box">
                 <video :id="item.type" class="video" :src="item.url"
-                       webkit-playsinline
-                       playsinline
                        controls
-                       x5-video-player-type="h5"
+                       preload
                        @play="playVideo(item)"
                 >
                 </video>
@@ -50,7 +48,7 @@
   const LIST = {
     mall: {
       list: [
-        {txt: '业务流程', type: 'mall-1', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/897f3e8d5285890790814242365/99cfP9ZSFekA.mov'},
+        {txt: '业务流程', type: 'mall-1', url: 'https://ksv-video-publish.cdn.bcebos.com/afedcf8727879d058cbbf31e791c05d7a432e4de.mp4?auth_key=1561644961-0-0-ee43c33e16eeec4dbbf09917b94ed4d7'},
         {txt: '拓展活动', type: 'mall-2', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/89d893895285890790814290061/HROWPvbfdzkA.mov'},
         {txt: '营销活动', type: 'mall-3', url: 'https://1255605079.vod2.myqcloud.com/cc5d3ba7vodgzp1255605079/89d9bd775285890790814292478/1GQ5Z5Ps6mEA.mov'},
       ]
