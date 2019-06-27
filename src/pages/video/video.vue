@@ -26,10 +26,9 @@
               <img class="video-bc" src="./pic-playbox@2x.png" alt="">
               <div class="video-box">
                 <video :id="item.type" class="video" :src="item.url"
-                       webkit-playsinline
                        playsinline
                        x5-video-player-type="h5"
-                       x5-video-orientation="h5"
+                       x5-video-orientation="landscape"
                        x5-video-player-fullscreen
                        controls
                        preload
