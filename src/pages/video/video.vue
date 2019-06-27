@@ -25,7 +25,7 @@
             <div class="item-video-box">
               <img class="video-bc" src="./pic-playbox@2x.png" alt="">
               <div class="video-box">
-                <video :id="item.type" class="video" :src="item.url"
+                <!--<video :id="item.type" class="video" :src="item.url"
                        playsinline
                        x5-video-player-type="h5"
                        x5-video-orientation="landscape"
@@ -35,8 +35,8 @@
                        :poster="item.poster"
                        @play="playVideo(item)"
                 >
-                </video>
-              <!--<video-player :ref="item.type" :playsinline="true" :options="item.playerOptions" class="video-player vjs-custom-skin"></video-player>-->
+                </video>-->
+                <video-player :ref="item.type" :playsinline="true" :options="item.playerOptions" class="video-player vjs-custom-skin"></video-player>
               </div>
             </div>
           </div>
