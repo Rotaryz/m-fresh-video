@@ -31,9 +31,11 @@
                        controls
                        preload
                        x5-video-player-type="h5"
+                       :poster="item.playerOptions.poster"
                        @play="playVideo(item)"
                 >
                 </video>
+              <!--<video-player :ref="item.type" :playsinline="true" :options="item.playerOptions" class="video-player vjs-custom-skin"></video-player>-->
               </div>
             </div>
           </div>
@@ -51,23 +53,266 @@
   const LIST = {
     mall: {
       list: [
-        {txt: '业务流程', type: 'mall-1', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8e9a56a5285890790842434700/v.f40.mp4'},
-        {txt: '拓展活动', type: 'mall-2', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea192d5285890790842435171/v.f40.mp4'},
-        {txt: '营销活动', type: 'mall-3', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea29f25285890790842435554/v.f40.mp4'},
+        {
+          txt: '业务流程',
+          type: 'mall-1',
+          url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8e9a56a5285890790842434700/v.f40.mp4',
+          playerOptions: {
+            playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
+            autoplay: false, // 如果true,浏览器准备好时开始回放。
+            muted: false, // 默认情况下将会消除任何音频。
+            loop: false, // 导致视频一结束就重新开始。
+            preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            language: 'zh-CN',
+            aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            sources: [{
+              type: "",
+              src: "https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8e9a56a5285890790842434700/v.f40.mp4" // 视频url地址
+            }],
+            poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8e9a56a5285890790842434700/1561648206_2098156387.100_0.jpg", // 你的封面地址
+            // width: document.documentElement.clientWidth,
+            notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            controlBar: {
+              timeDivider: true,
+              durationDisplay: true,
+              remainingTimeDisplay: false,
+              fullscreenToggle: true  // 全屏按钮
+            }
+          }
+        },
+        {
+          txt: '拓展活动',
+          type: 'mall-2',
+          url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea192d5285890790842435171/v.f40.mp4',
+          playerOptions: {
+            playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
+            autoplay: false, // 如果true,浏览器准备好时开始回放。
+            muted: false, // 默认情况下将会消除任何音频。
+            loop: false, // 导致视频一结束就重新开始。
+            preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            language: 'zh-CN',
+            aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            sources: [{
+              type: "",
+              src: "https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea192d5285890790842435171/v.f40.mp4" // 视频url地址
+            }],
+            poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea192d5285890790842435171/1561648206_569702460.100_0.jpg", // 你的封面地址
+            // width: document.documentElement.clientWidth,
+            notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            controlBar: {
+              timeDivider: true,
+              durationDisplay: true,
+              remainingTimeDisplay: false,
+              fullscreenToggle: true  // 全屏按钮
+            }
+          }
+        },
+        {
+          txt: '营销活动',
+          type: 'mall-3',
+          url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea29f25285890790842435554/v.f40.mp4',
+          playerOptions: {
+            playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
+            autoplay: false, // 如果true,浏览器准备好时开始回放。
+            muted: false, // 默认情况下将会消除任何音频。
+            loop: false, // 导致视频一结束就重新开始。
+            preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            language: 'zh-CN',
+            aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            sources: [{
+              type: "",
+              src: "https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea29f25285890790842435554/v.f40.mp4" // 视频url地址
+            }],
+            poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ea29f25285890790842435554/1561648206_2086020895.100_0.jpg", // 你的封面地址
+            // width: document.documentElement.clientWidth,
+            notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            controlBar: {
+              timeDivider: true,
+              durationDisplay: true,
+              remainingTimeDisplay: false,
+              fullscreenToggle: true  // 全屏按钮
+            }
+          }
+        }
       ]
     },
     supply: {
       list: [
-        {txt: '业务流程', type: 'supply-1', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eaa8eb5285890790842436204/v.f40.mp4'},
-        {txt: '数字化', type: 'supply-2', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eabe325285890790842436706/v.f40.mp4'},
-        {txt: '移动化', type: 'supply-3', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b702ac755285890790842397505/v.f40.mp4'},
+        {
+          txt: '业务流程',
+          type: 'supply-1',
+          url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eaa8eb5285890790842436204/v.f40.mp4',
+          playerOptions: {
+            playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
+            autoplay: false, // 如果true,浏览器准备好时开始回放。
+            muted: false, // 默认情况下将会消除任何音频。
+            loop: false, // 导致视频一结束就重新开始。
+            preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            language: 'zh-CN',
+            aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            sources: [{
+              type: "",
+              src: "https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eaa8eb5285890790842436204/v.f40.mp4" // 视频url地址
+            }],
+            poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eaa8eb5285890790842436204/1561648206_104897135.100_0.jpg", // 你的封面地址
+            // width: document.documentElement.clientWidth,
+            notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            controlBar: {
+              timeDivider: true,
+              durationDisplay: true,
+              remainingTimeDisplay: false,
+              fullscreenToggle: true  // 全屏按钮
+            }
+          }
+        },
+        {
+          txt: '数字化',
+          type: 'supply-2',
+          url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eabe325285890790842436706/v.f40.mp4',
+          playerOptions: {
+            playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
+            autoplay: false, // 如果true,浏览器准备好时开始回放。
+            muted: false, // 默认情况下将会消除任何音频。
+            loop: false, // 导致视频一结束就重新开始。
+            preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            language: 'zh-CN',
+            aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            sources: [{
+              type: "",
+              src: "https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eabe325285890790842436706/v.f40.mp4" // 视频url地址
+            }],
+            poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eabe325285890790842436706/1561648206_1260020087.100_0.jpg", // 你的封面地址
+            // width: document.documentElement.clientWidth,
+            notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            controlBar: {
+              timeDivider: true,
+              durationDisplay: true,
+              remainingTimeDisplay: false,
+              fullscreenToggle: true  // 全屏按钮
+            }
+          }
+        },
+        {
+          txt: '移动化',
+          type: 'supply-3',
+          url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b702ac755285890790842397505/v.f40.mp4',
+          playerOptions: {
+            playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
+            autoplay: false, // 如果true,浏览器准备好时开始回放。
+            muted: false, // 默认情况下将会消除任何音频。
+            loop: false, // 导致视频一结束就重新开始。
+            preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            language: 'zh-CN',
+            aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            sources: [{
+              type: "",
+              src: "https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b702ac755285890790842397505/v.f40.mp4" // 视频url地址
+            }],
+            poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b702ac755285890790842397505/1561648206_2088012967.100_0.jpg", // 你的封面地址
+            // width: document.documentElement.clientWidth,
+            notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            controlBar: {
+              timeDivider: true,
+              durationDisplay: true,
+              remainingTimeDisplay: false,
+              fullscreenToggle: true  // 全屏按钮
+            }
+          }
+        }
       ]
     },
     data: {
       list: [
-        {txt: '数据图谱', type: 'data-1', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eb4ad15285890790842437722/v.f40.mp4'},
-        {txt: '选品数据', type: 'data-2', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebc6f85285890790842438386/v.f40.mp4'},
-        {txt: '社群数据', type: 'data-3', url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebdf735285890790842438903/v.f40.mp4'},
+        {
+          txt: '数据图谱',
+          type: 'data-1',
+          url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eb4ad15285890790842437722/v.f40.mp4',
+          playerOptions: {
+            playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
+            autoplay: false, // 如果true,浏览器准备好时开始回放。
+            muted: false, // 默认情况下将会消除任何音频。
+            loop: false, // 导致视频一结束就重新开始。
+            preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            language: 'zh-CN',
+            aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            sources: [{
+              type: "",
+              src: "https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eb4ad15285890790842437722/v.f40.mp4" // 视频url地址
+            }],
+            poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8eb4ad15285890790842437722/1561648206_3136762983.100_0.jpg", // 你的封面地址
+            // width: document.documentElement.clientWidth,
+            notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            controlBar: {
+              timeDivider: true,
+              durationDisplay: true,
+              remainingTimeDisplay: false,
+              fullscreenToggle: true  // 全屏按钮
+            }
+          }
+        },
+        {
+          txt: '选品数据',
+          type: 'data-2',
+          url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebc6f85285890790842438386/v.f40.mp4',
+          playerOptions: {
+            playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
+            autoplay: false, // 如果true,浏览器准备好时开始回放。
+            muted: false, // 默认情况下将会消除任何音频。
+            loop: false, // 导致视频一结束就重新开始。
+            preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            language: 'zh-CN',
+            aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            sources: [{
+              type: "",
+              src: "https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebc6f85285890790842438386/v.f40.mp4" // 视频url地址
+            }],
+            poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebc6f85285890790842438386/1561648207_1236589795.100_0.jpg", // 你的封面地址
+            // width: document.documentElement.clientWidth,
+            notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            controlBar: {
+              timeDivider: true,
+              durationDisplay: true,
+              remainingTimeDisplay: false,
+              fullscreenToggle: true  // 全屏按钮
+            }
+          }
+        },
+        {
+          txt: '社群数据',
+          type: 'data-3',
+          url: 'https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebdf735285890790842438903/v.f40.mp4',
+          playerOptions: {
+            playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
+            autoplay: false, // 如果true,浏览器准备好时开始回放。
+            muted: false, // 默认情况下将会消除任何音频。
+            loop: false, // 导致视频一结束就重新开始。
+            preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            language: 'zh-CN',
+            aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            sources: [{
+              type: "",
+              src: "https://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebdf735285890790842438903/v.f40.mp4" // 视频url地址
+            }],
+            poster: "http://1255605079.vod2.myqcloud.com/8084de4fvodtransgzp1255605079/b8ebdf735285890790842438903/1561648206_97281551.100_0.jpg", // 你的封面地址
+            // width: document.documentElement.clientWidth,
+            notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            controlBar: {
+              timeDivider: true,
+              durationDisplay: true,
+              remainingTimeDisplay: false,
+              fullscreenToggle: true  // 全屏按钮
+            }
+          }
+        }
       ]
     }
   }
