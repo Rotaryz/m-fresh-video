@@ -25,7 +25,12 @@
             <div class="item-video-box">
               <img class="video-bc" src="./pic-playbox@2x.png" alt="">
               <div class="video-box">
-                <video :id="item.type" class="video" :src="item.url" controls preload
+                <video :id="item.type" class="video" :src="item.url"
+                       webkit-playsinline
+                       playsinline
+                       controls
+                       preload
+                       x5-video-player-type="h5"
                        @play="playVideo(item)"
                 >
                 </video>
