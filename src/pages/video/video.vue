@@ -30,7 +30,6 @@
                        playsinline
                        controls
                        preload
-                       x5-video-player-type="h5"
                        :poster="item.playerOptions.poster"
                        @play="playVideo(item)"
                 >
