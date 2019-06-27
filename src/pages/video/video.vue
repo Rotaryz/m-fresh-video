@@ -29,7 +29,6 @@
                        webkit-playsinline
                        playsinline
                        controls
-                       preload
                        x5-video-player-type="h5"
                        @play="playVideo(item)"
                 >
