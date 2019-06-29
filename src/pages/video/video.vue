@@ -4,50 +4,47 @@
       <img class="bc-img" src="./c-bc@2x.png" alt="">
     </div>
     <div class="content">
-      <scroll
-        class="scroll"
-        bcColor="rgba(0, 0, 0, 0)"
-      >
-        <div class="content-header">
-          <div class="header-tabs">
-            <div v-for="(item, idx) in tabList" :key="idx" class="tab" :class="{'active' : item.type === selected}" @click="changeTab(item)">
-              <img class="tab-icon" :src="item.icon" alt="">
-              <p class="tab-txt">{{item.txt}}</p>
-            </div>
+      <div class="content-header">
+        <div class="header-tabs">
+          <div v-for="(item, idx) in tabList" :key="idx" class="tab" :class="{'active' : item.type === selected}" @click="changeTab(item)">
+            <img class="tab-icon" :src="item.icon" alt="">
+            <p class="tab-txt">{{item.txt}}</p>
           </div>
         </div>
-        <div class="video-content">
-          <div v-for="(item, idx) in arr[selected].list" :key="idx" class="video-item">
-            <div class="item-header">
-              <span class="item-circle">{{idx * 1 + 1}}</span>
-              <p class="item-title">{{item.txt}}</p>
-            </div>
-            <div class="item-video-box">
-              <img class="video-bc" src="./pic-playbox@2x.png" alt="">
-              <div class="video-box">
-                <video :id="item.type" class="video" :src="item.url"
-                       playsinline
-                       x5-video-player-type="h5"
-                       x5-video-orientation="landscape"
-                       x5-video-player-fullscreen
-                       controls
-                       preload
-                       :poster="item.poster"
-                       @play="playVideo(item)"
-                >
-                </video>
-              <!--<video-player :ref="item.type" :playsinline="true" :options="item.playerOptions" class="video-player vjs-custom-skin"></video-player>-->
+      </div>
+      <div class="video-content">
+        <div v-for="(item, idx) in arr[selected].list" :key="idx" class="video-item">
+          <div class="item-header">
+            <span class="item-circle">{{idx * 1 + 1}}</span>
+            <p class="item-title">{{item.txt}}</p>
+          </div>
+          <div class="item-video-box">
+            <img class="video-bc" src="./pic-playbox@2x.png" alt="">
+            <div class="video-box">
+              <!--<video :id="item.type" class="video" :src="item.url"
+                     playsinline
+                     x5-video-player-type="h5"
+                     x5-video-orientation="landscape"
+                     x5-video-player-fullscreen
+                     controls
+                     preload
+                     :poster="item.poster"
+                     @play="playVideo(item)"
+              >
+              </video>-->
+              <div :id="item.type" class="video">
+                <div :id="item.type" class="video-content"></div>
               </div>
             </div>
           </div>
         </div>
-      </scroll>
+      </div>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import Scroll from '@components/scroll/scroll'
+  import DPlayer from 'dplayer'
 
   const PAGE_NAME = 'VIDEO'
 
@@ -128,9 +125,6 @@
 
   export default {
     name: PAGE_NAME,
-    components: {
-      Scroll
-    },
     page() {
       return {
         title: '赞播优鲜'
@@ -140,20 +134,31 @@
       return {
         arr: LIST,
         tabList: TABS,
-        selected: 'mall'
+        selected: 'mall',
+        videoPlayers: {}
       }
     },
+    mounted() {
+      this.initVideo()
+    },
     methods: {
+      initVideo() {
+        this.arr[this.selected].list.forEach(item => {
+          let player = new DPlayer({
+            container: document.getElementById(item.type),
+            video: {
+              url: item.url,
+              pic: item.poster
+            }
+          })
+          this.$set(this.videoPlayers, item.type, player)
+        })
+      },
       changeTab(item) {
         this.selected = item.type
-      },
-      playVideo(item) {
-        this.arr[this.selected].list.forEach(item1 => {
-          if (item1.type !== item.type) {
-            let myVideo = document.getElementById(item1.type)
-            myVideo.pause()
-          }
-        })
+        setTimeout(() => {
+          this.initVideo()
+        }, 200)
       }
     }
   }
@@ -270,6 +275,10 @@
                 top: 0
                 width: 100%
                 height: 100%
+                .video-content
+                  position: relative
+                  width: 100%
+                  height: 100%
   .test-page1
     width: 100%
 </style>
