@@ -4,11 +4,8 @@ import router from '@router'
 import store from '@state/store'
 import '@components/_globals'
 import {Plugins} from '@utils/plugins'
-import VueVideoPlayer from 'vue-video-player'
-import 'video.js/dist/video-js.css'
 
 Vue.use(Plugins)
-Vue.use(VueVideoPlayer)
 
 Vue.config.productionTip = process.env.NODE_ENV === 'production'
 
